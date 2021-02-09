@@ -35,6 +35,14 @@
                 <input
                   type="text"
                   class="form-control"
+                  v-model="article.location"
+                  placeholder="Where is this article located ?"
+                />
+              </fieldset>
+              <fieldset class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
                   placeholder="Enter tags"
                   v-model="tagInput"
                   @keypress.enter.prevent="addTag(tagInput)"

@@ -10,6 +10,7 @@
       <div class="row article-content">
         <div class="col-xs-12">
           <div v-html="parseMarkdown(article.body)"></div>
+          <RwvMap location="Rennes"></RwvMap>
           <ul class="tag-list">
             <li v-for="(tag, index) of article.tagList" :key="tag + index">
               <RwvTag
@@ -59,6 +60,7 @@ import RwvArticleMeta from "@/components/ArticleMeta";
 import RwvComment from "@/components/Comment";
 import RwvCommentEditor from "@/components/CommentEditor";
 import RwvTag from "@/components/VTag";
+import RwvMap from "@/components/Map";
 import { FETCH_ARTICLE, FETCH_COMMENTS } from "@/store/actions.type";
 
 export default {
@@ -73,6 +75,7 @@ export default {
     RwvArticleMeta,
     RwvComment,
     RwvCommentEditor,
+    RwvMap,
     RwvTag
   },
   beforeRouteEnter(to, from, next) {
@@ -88,6 +91,7 @@ export default {
   },
   methods: {
     parseMarkdown(content) {
+      console.log(this.article);
       return marked(content);
     }
   }

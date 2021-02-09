@@ -33,6 +33,7 @@ const initialState = {
     title: "",
     description: "",
     body: "",
+    location: "",
     tagList: []
   },
   comments: []
