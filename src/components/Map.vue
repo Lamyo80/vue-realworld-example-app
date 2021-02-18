@@ -14,7 +14,7 @@ import { HERE_MAP_API_KEY } from "@/common/config";
 export default {
   name: "RwvMap",
   props: {
-    location: { type: String, required: true }
+    localisation: { type: String, required: true }
   },
   data() {
     return {
@@ -36,15 +36,15 @@ export default {
     this.platform = new H.service.Platform({
       apikey: HERE_MAP_API_KEY
     });
-    this.convertLocationToGeocode();
+    this.convertlocalisationToGeocode();
   },
   methods: {
-    convertLocationToGeocode() {
+    convertlocalisationToGeocode() {
       let geocoderService = this.platform.getSearchService();
 
       geocoderService.geocode(
         {
-          q: "RENNES"
+          q: "Square de Tanouarn 35700 Rennes"
         },
         result => {
           result.items.forEach(item => {

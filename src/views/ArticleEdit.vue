@@ -35,7 +35,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  v-model="article.location"
+                  v-model="article.localisation"
                   placeholder="Where is this article located ?"
                 />
               </fieldset>
